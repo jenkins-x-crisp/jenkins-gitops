@@ -12,7 +12,7 @@ variable "gcp_project" {
 variable "cluster_name" {
   description = "Name of the Kubernetes cluster to create"
   type        = string
-  default     = ""
+  default     = "jenkins-x"
 }
 
 variable "cluster_location" {
@@ -63,7 +63,7 @@ variable "node_disk_type" {
 variable "force_destroy" {
   description = "Flag to determine whether storage buckets get forcefully destroyed"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "node_preemptible" {
@@ -107,11 +107,14 @@ variable "jx_git_url" {
 variable "jx_bot_username" {
   description = "Bot username used to interact with the Jenkins X cluster git repository"
   type        = string
+  default     = "jenkins-x-bot-crisp-service"
+
 }
 
 variable "jx_bot_token" {
   description = "Bot token used to interact with the Jenkins X cluster git repository"
   type        = string
+  default     = "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"
 }
 
 variable "subdomain" {
